@@ -1,0 +1,30 @@
+
+export const  SalaryOperations = {
+    basicSalary:0,
+    fillBasic(sal){
+        this.basicSalary = parseInt(sal);
+},
+hra(){
+    return this.basicSalary * 0.30;
+},
+da(){
+    return this.basicSalary * 0.20;
+},
+ta(){
+    return this.basicSalary * 0.10;
+},
+pf(){
+    return this.basicSalary * 0.05;
+},
+tax(){
+    return this.basicSalary * 0.10;
+},
+gs(){
+    return this.basicSalary + this.hra() + this.da() + this.ta();
+},
+ns(){
+    return this.gs() - this.pf() - this.tax();
+}
+
+
+}
