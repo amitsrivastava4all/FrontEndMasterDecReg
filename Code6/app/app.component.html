@@ -1,0 +1,9 @@
+<h1>{{msg}}</h1>
+<div [hidden]="flag">
+    <h2 [class]="myclass" [innerText]="msg"></h2>
+</div>
+<button (click)="displayShowHide()">show hide</button>
+<button (click)="plus()">Increment</button>
+<p>Count is {{counter}}</p>
+<input type="text" placeholder="Type First Name" (input)="takeName($event)">
+<p>Your Name is {{name}}</p>
