@@ -1,0 +1,63 @@
+<p>Parent child communication</p>
+<tcs-p1></tcs-p1>
+<br>
+<br>
+<br>
+
+<tcs-subchild2>
+</tcs-subchild2>
+Calling Child
+<app-child1></app-child1>
+<hr>
+<p>Object is {{obj|json}}</p>
+Counter is {{counter}} {{"Amit"|slice:0:3}}
+<div [ngSwitch]="counter">
+    <p *ngSwitchCase="1"><span>Ram</span></p>
+    <p *ngSwitchCase="2">Shyam</p>
+    <p *ngSwitchCase="3">Sohan</p>
+    <p *ngSwitchCase="4">Mohan</p>
+    <p *ngSwitchCase="5">Mike</p>
+    <p *ngSwitchCase="6">Tim</p>
+    <p *ngSwitchCase="7">New Movie</p>
+    <p *ngSwitchDefault>Unknown</p>
+</div>
+<ul *ngFor="let name of names;let i=index">
+    <li>{{i+1}} &nbsp;{{name|uppercase}}</li>
+</ul>
+<h4>Using Ref</h4>
+<input #first placeholder="Type First Number" type="text">
+<br>
+<input #second placeholder="Type Second Number" type="text">
+<br>
+<button (click)="doAdd(first.value,second.value)">Add</button>
+<p>Total is {{total|currency:'INR':true:'3.3-5'}}</p>
+<hr>
+<h1>{{msg}}</h1>
+<button [disabled]="flag">Ok</button>
+<div [hidden]="flag">
+    <h2 [class]="myclass" [innerText]="msg"></h2>
+</div>
+<button (click)="displayShowHide()">show hide</button>
+<button (click)="plus()">Increment</button>
+<p>Count is {{counter}}</p>
+<input type="text" placeholder="Type First Name" (input)="takeName($event)">
+<p>Your Name is {{name}}</p>
+
+<hr>
+<p>If else example</p>
+<div *ngIf="counter>5">
+    <h3>Ng If .....</h3>
+</div>
+<div *ngIf="flag; then login else logout">
+
+</div>
+<ng-template #logout>
+    <div>Logout</div>
+</ng-template>
+<ng-template #login>
+    <div>Login</div>
+</ng-template>
+
+
+<h3 [ngClass]="{'orange':counter>=10,'green':counter<10}">NGClass</h3>
+<h4 [ngStyle]="{'background-color':counter>=10?'red':'yellow'}">NgStyle</h4>

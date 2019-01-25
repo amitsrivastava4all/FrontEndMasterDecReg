@@ -1,0 +1,6 @@
+<div class='container'>
+    <h1 class='alert-success'>Calc App</h1>
+    <app-input (first)="getFirstInput($event)" (second)="getSecondInput($event)"></app-input>
+    <app-operator (opr)="getOperationName($event)"></app-operator>
+    <app-output [total]="result"></app-output>
+</div>

@@ -1,0 +1,4 @@
+<h1>Inside P1 </h1>
+<h2>Data is {{message}}</h2>
+<input type="text" (input)="takeInput($event)" placeholder='Type data Send to Child'>
+<tcs-p2 (dataout)="callMe($event)" [cust]="customer" [data]="message"></tcs-p2>

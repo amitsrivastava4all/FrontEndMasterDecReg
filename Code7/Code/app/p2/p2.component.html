@@ -1,0 +1,5 @@
+<h2>Inside P2</h2>
+<p>{{data}}</p>
+<h2>Customer is {{cust.id}} {{cust.name}}</h2>
+<input type="text" #p2 placeholder='Type Text Send to Parent'>
+<button (click)="callParent($event,p2.value)">Send Data to Parent</button>
