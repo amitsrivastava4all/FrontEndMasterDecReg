@@ -1,0 +1,8 @@
+<p>
+ Reactive Form
+</p>
+<form [formGroup]="form">
+<input type='text' formControlName="userid">
+<span *ngIf="form.get('userid').touched && form.get('userid').invalid && form.get('userid').errors['required']">Userid is Blank</span>
+<span *ngIf="form.get('userid').touched && form.get('userid').invalid && form.get('userid').errors['pattern']">Userid must be b/w 3 to 10 chars</span>
+</form>
