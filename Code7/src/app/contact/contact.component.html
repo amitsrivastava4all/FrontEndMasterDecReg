@@ -1,0 +1,15 @@
+<p>
+    contact works!
+</p>
+<h2>{{msg}}</h2>
+
+<br><br>
+<hr>
+<ul>
+    <li *ngFor="let i of links">
+        <a [routerLink]="i.link">{{i.name}}</a>
+    </li>
+    <br>
+    <hr>
+    <router-outlet></router-outlet>
+</ul>

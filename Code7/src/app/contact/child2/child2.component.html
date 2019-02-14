@@ -1,0 +1,26 @@
+<p>
+    Reactive Form
+</p>
+<form [formGroup]="form">
+    <button (click)="addEmail()">Add Email</button>
+    <br>
+    <ul>
+        <li *ngFor="let element of form.get('email').controls;let i=index">
+            {{i+1}} <input type="text" [formControlName]="i"> Field Is {{form.get('email').i}}
+
+        </li>
+    </ul>
+
+    <input type='text' formControlName="userid">
+    <span *ngIf="form.get('userid').touched && form.get('userid').invalid && form.get('userid').errors['required']">Userid is Blank</span>
+    <span *ngIf="form.get('userid').touched && form.get('userid').invalid && form.get('userid').errors['pattern']">Userid must be b/w 3 to 10 chars</span>
+    <span *ngIf="form.get('userid').touched && form.get('userid').invalid && form.get('userid').errors['invaliduser']">User is Invalid</span>
+    <hr>
+
+
+    <div formGroupName="personal">
+        <input type='text' formControlName="userid">
+        <span *ngIf="form.get('personal.userid').touched && form.get('personal.userid').invalid && form.get('personal.userid').errors['required']">Personal Userid is Blank</span>
+
+    </div>
+</form>

@@ -1,0 +1,20 @@
+<p>
+  Validation Demo
+</p>
+<form (ngSubmit)="save(myform)" #myform="ngForm">
+    <input #email="ngModel" type="text" ngModel name="email" required placeholder="Type email here">
+    <span></span>
+    <input #uname="ngModel" type="text" ngModel name="uname" required pattern="[a-z]{3,10}"placeholder="Type Name Here">
+    <span *ngIf="uname.touched && uname.invalid && uname.errors['required']">UName Can't Be Blank</span>
+    <span *ngIf="uname.touched && uname.invalid && uname.errors['pattern']">UNAme must be between 3 to 10 Chars</span>
+<br>
+  <br> Pristine {{uname.pristine}}
+        <br> Touched {{uname.touched}}
+        <br> Untouched {{uname.untouched}}
+        <br> Dirty {{uname.dirty}}
+        <br> Valid {{uname.valid}}
+        <br> Invalid {{uname.invalid}}
+        <br> Error {{uname.errors|json}}
+
+    <button type="submit">Submit</button>
+</form>
